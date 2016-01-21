@@ -35,6 +35,7 @@
      {
          //传递返回数据
          [self func_back_data:responseObject];
+         NSLog(@"net controller responseobject = %@",operation);
          if(selector && target)
          {
              [target performSelector:selector withObject:ContentArray];
@@ -46,7 +47,7 @@
      {
          UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"出错了" message:@"请检查网络" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
          [alert show];
-         NSLog(@"json:%@",error);
+         NSLog(@"error:%@  \n operation:%@",error,operation);
          
      }];
     

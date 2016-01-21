@@ -18,7 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet Index_ViewController *_IndexView;
 @property (strong, nonatomic) IBOutlet UserCenterViewController *_UserCenterView;
-@property (strong, nonatomic) IBOutlet ConfigViewController *_ConfigView;
+@property (strong, nonatomic) IBOutlet ConfigViewController *_ConfigViewController;
+
 
 
 @end

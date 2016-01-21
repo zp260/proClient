@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Index_Content">
@@ -10,6 +10,8 @@
                 <outlet property="SucessBT" destination="Fcu-fi-txs" id="8Wa-O1-Gmd"/>
                 <outlet property="_RepeatBt" destination="fXu-0c-ft4" id="2sY-uc-pcc"/>
                 <outlet property="_SignBT" destination="Wbd-bl-Qbf" id="l36-ec-qQw"/>
+                <outlet property="_packLable" destination="Lb7-jR-bI3" id="SSr-OO-uLE"/>
+                <outlet property="_projectNum" destination="Sps-73-PXG" id="Pad-0w-1Hu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,25 +40,22 @@
                         <action selector="SignBtClick:" destination="-1" eventType="touchUpInside" id="Vvx-IV-XVg"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-wd-l7L">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-wd-l7L">
                     <rect key="frame" x="0.0" y="48" width="600" height="150"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="tsQ-ly-2La"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="项目名称项目名称项目名称项目名称项目名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-jR-bI3">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：项目名称：" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-jR-bI3">
                     <rect key="frame" x="8" y="314" width="584" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="w4p-qg-76f"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="通知列表" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZT-fD-jLr">
-                    <rect key="frame" x="8" y="243" width="92" height="35"/>
+                    <rect key="frame" x="8" y="206" width="92" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.038893469239999999" green="0.53851488889999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcu-fi-txs">
@@ -65,48 +64,48 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Zam-YO-3ZF"/>
                     </constraints>
-                    <state key="normal" title="签到成功！请返回">
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="返回">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="SuccessBtClick:" destination="-1" eventType="touchUpInside" id="yYi-PF-f93"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-Ug-ODE">
-                    <rect key="frame" x="0.0" y="206" width="600" height="29"/>
-                    <segments>
-                        <segment title="标段一"/>
-                        <segment title="标段二"/>
-                    </segments>
-                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="项目编号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-73-PXG">
+                    <rect key="frame" x="8" y="260" width="584" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Fcu-fi-txs" secondAttribute="bottom" constant="74" id="1Eb-OZ-21X"/>
+                <constraint firstAttribute="trailing" secondItem="Sps-73-PXG" secondAttribute="trailing" constant="8" id="5Uw-gR-0Lr"/>
                 <constraint firstItem="Wbd-bl-Qbf" firstAttribute="top" secondItem="Lb7-jR-bI3" secondAttribute="bottom" constant="65" id="6Yv-tU-3ad"/>
                 <constraint firstItem="Wbd-bl-Qbf" firstAttribute="leading" secondItem="fXu-0c-ft4" secondAttribute="trailing" constant="33" id="6rJ-ZS-NvQ"/>
                 <constraint firstItem="Wbd-bl-Qbf" firstAttribute="leading" secondItem="fXu-0c-ft4" secondAttribute="trailing" constant="33" id="9qA-QT-9He"/>
                 <constraint firstItem="Lb7-jR-bI3" firstAttribute="centerX" secondItem="bhF-wd-l7L" secondAttribute="centerX" id="Ar7-hv-eM9"/>
                 <constraint firstItem="bhF-wd-l7L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="AwS-Gv-J40"/>
-                <constraint firstItem="Mo2-Ug-ODE" firstAttribute="leading" secondItem="bhF-wd-l7L" secondAttribute="leading" id="Bht-Dy-He6"/>
                 <constraint firstItem="bhF-wd-l7L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Da3-Dc-I58"/>
                 <constraint firstItem="Fcu-fi-txs" firstAttribute="trailing" secondItem="Lb7-jR-bI3" secondAttribute="trailing" id="Elh-k5-ud1"/>
                 <constraint firstAttribute="trailing" secondItem="bhF-wd-l7L" secondAttribute="trailing" id="FRB-D3-AI3"/>
-                <constraint firstItem="Mo2-Ug-ODE" firstAttribute="trailing" secondItem="bhF-wd-l7L" secondAttribute="trailing" id="Kb5-S2-PbM"/>
+                <constraint firstItem="Sps-73-PXG" firstAttribute="top" secondItem="4ZT-fD-jLr" secondAttribute="bottom" constant="19" id="Gyt-Y3-Z3c"/>
                 <constraint firstItem="Lb7-jR-bI3" firstAttribute="leading" secondItem="4ZT-fD-jLr" secondAttribute="leading" id="LjQ-QH-cbR"/>
                 <constraint firstItem="4ZT-fD-jLr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="NSF-cM-9sd"/>
-                <constraint firstItem="Mo2-Ug-ODE" firstAttribute="top" secondItem="bhF-wd-l7L" secondAttribute="bottom" constant="8" symbolic="YES" id="WIy-l1-zTf"/>
                 <constraint firstItem="Fcu-fi-txs" firstAttribute="leading" secondItem="Lb7-jR-bI3" secondAttribute="leading" id="Xxr-Gq-ukk"/>
                 <constraint firstItem="fXu-0c-ft4" firstAttribute="top" secondItem="Lb7-jR-bI3" secondAttribute="bottom" constant="65" id="arY-n7-5Dp"/>
                 <constraint firstItem="Wbd-bl-Qbf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="42" id="eRC-2W-Dmr"/>
-                <constraint firstItem="4ZT-fD-jLr" firstAttribute="top" secondItem="Mo2-Ug-ODE" secondAttribute="bottom" constant="9" id="elp-II-hYt"/>
-                <constraint firstItem="Lb7-jR-bI3" firstAttribute="top" secondItem="4ZT-fD-jLr" secondAttribute="bottom" constant="36" id="rAb-TQ-1Ky"/>
-                <constraint firstItem="4ZT-fD-jLr" firstAttribute="top" secondItem="bhF-wd-l7L" secondAttribute="bottom" constant="35" id="uMV-6E-yca"/>
+                <constraint firstItem="Lb7-jR-bI3" firstAttribute="top" secondItem="4ZT-fD-jLr" secondAttribute="bottom" constant="73" id="rAb-TQ-1Ky"/>
+                <constraint firstItem="4ZT-fD-jLr" firstAttribute="top" secondItem="bhF-wd-l7L" secondAttribute="bottom" constant="8" id="uMV-6E-yca"/>
+                <constraint firstItem="Lb7-jR-bI3" firstAttribute="top" secondItem="Sps-73-PXG" secondAttribute="bottom" constant="33" id="uqg-9s-w3w"/>
                 <constraint firstItem="fXu-0c-ft4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-41" id="w7z-Dj-kjR"/>
+                <constraint firstItem="Sps-73-PXG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="xRQ-sH-KKg"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="weather.jpg" width="535" height="248"/>
+        <image name="top" width="535" height="248"/>
     </resources>
 </document>

@@ -10,9 +10,9 @@
 #import "TabBarViewController.h"
 
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<UITextFieldDelegate>
 {
-    
+    CGSize kbSize;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *_TopWeatherImgView;
 @property (strong, nonatomic) IBOutlet UITextField *_UserTextFiled;
@@ -24,5 +24,7 @@
 @property (strong,nonatomic) NSString *DefaultPass;
 @property (strong,nonatomic) NSString *DefaultEid;
 @property (strong,nonatomic) NSString *DefaultCst;
+
+#define loginPath @"/eph/e/login"
 
 @end

@@ -50,7 +50,7 @@
 {
     NSDictionary *_para = [[NSDictionary alloc]initWithObjectsAndKeys:self._UserTextFiled.text,@"sjhm",self._PassTextFiled.text,@"pass", nil];
 //    NSDictionary *_para = [[NSDictionary alloc]initWithObjectsAndKeys:@"345",@"sjhm",@"1",@"pass", nil];
-    NSString *_url = @"http://110.181.194.119:18080/eph/e/login";
+    NSString *_url = [[NSString alloc]initWithFormat:@"%@%@",Url_RootAdress,loginPath];
     NetGetController *_netGet = [[NetGetController alloc]init];
     [_netGet PostUrl:_url target:self selector:@selector(LoadData:) parameters:_para];
 }
@@ -90,6 +90,101 @@
     TabBarViewController *tab =[[TabBarViewController alloc]init];
     [self.navigationController pushViewController:tab animated:YES];
 }
+#pragma mark - textField delegate
+//开始编辑输入框的时候，软键盘出现，执行此事件
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 310)+self._PassTextFiled.height;//键盘高度216
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //将视图的Y坐标向上移动offset个单位，以使下面腾出地方用于软键盘的显示
+    if(offset > 0)
+        self.view.frame = CGRectMake(0.0f, self.view.frame.origin.y-offset, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [UIView commitAnimations];
+}
+
+//当用户按下return键或者按回车键，keyboard消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//输入框编辑完成以后，将视图恢复到原始状态
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
+
+#pragma mark - keyboardHight
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self registerForKeyboardNotifications];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)registerForKeyboardNotifications
+{
+    //使用NSNotificationCenter 鍵盤出現時
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWasShown:)
+     
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    //使用NSNotificationCenter 鍵盤隐藏時
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWillBeHidden:)
+     
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+    
+}
+
+
+
+//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置 得到键盘高度
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    //kbSize即為鍵盤尺寸 (有width, height)
+    kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
+    NSLog(@"hight_hitht:%f",kbSize.height);
+}
+
+//当键盘隐藏的时候
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    //do something
+}
+
+
+
+//判断当前输入法
+-(void)textViewDidChangeSelection:(UITextView *)textView
+{
+    NSLog(@"wewe:%@",[[UITextInputMode currentInputMode] primaryLanguage]);
+    /*
+     if ([[UITextInputMode currentInputMode] primaryLanguage] == @"en-US") {
+     NSLog(@"en-US");
+     }
+     else
+     {
+     NSLog(@"zh-hans");
+     }
+     */
+}
+
 /*
 #pragma mark - Navigation
 

@@ -26,7 +26,7 @@
 
     UINavigationController *IndexNav = [[UINavigationController alloc]initWithRootViewController:self._IndexView];
     UINavigationController *UserCenterNav = [[UINavigationController alloc]initWithRootViewController:self._UserCenterView];
-    UINavigationController *ConfigNav = [[UINavigationController alloc]initWithRootViewController:self._ConfigView];
+    UINavigationController *ConfigNav = [[UINavigationController alloc]initWithRootViewController:self._ConfigViewController];
     [self._TabbarController addChildViewController:IndexNav];
     [self._TabbarController addChildViewController:UserCenterNav];
     [self._TabbarController addChildViewController:ConfigNav];

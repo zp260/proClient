@@ -38,6 +38,12 @@
 		36B424401BB3FF7600F054A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B4243F1BB3FF7600F054A9 /* Assets.xcassets */; };
 		36EA6D971BB6461A009E755F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EA6D951BB6461A009E755F /* WebViewController.m */; };
 		36EA6D981BB6461A009E755F /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EA6D961BB6461A009E755F /* WebViewController.xib */; };
+		36F5BD3F1BE2FECB00C373FE /* ProgramPacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F5BD3D1BE2FECB00C373FE /* ProgramPacketViewController.m */; };
+		36F5BD401BE2FECB00C373FE /* ProgramPacketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F5BD3E1BE2FECB00C373FE /* ProgramPacketViewController.xib */; };
+		4A0A4A6D1C14386C000D88CB /* XirenCoustNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A4A6C1C14386C000D88CB /* XirenCoustNav.m */; };
+		4A31EFE01C33CAA4003A147A /* ShuoMingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A31EFDE1C33CAA4003A147A /* ShuoMingViewController.m */; };
+		4A31EFE11C33CAA4003A147A /* ShuoMingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A31EFDF1C33CAA4003A147A /* ShuoMingViewController.xib */; };
+		4AE3D3FC1C16E31A00C67574 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE3D3FB1C16E31A00C67574 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +98,15 @@
 		36EA6D941BB6461A009E755F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		36EA6D951BB6461A009E755F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		36EA6D961BB6461A009E755F /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		36F5BD3C1BE2FECB00C373FE /* ProgramPacketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramPacketViewController.h; sourceTree = "<group>"; };
+		36F5BD3D1BE2FECB00C373FE /* ProgramPacketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramPacketViewController.m; sourceTree = "<group>"; };
+		36F5BD3E1BE2FECB00C373FE /* ProgramPacketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramPacketViewController.xib; sourceTree = "<group>"; };
+		4A0A4A6B1C14386C000D88CB /* XirenCoustNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XirenCoustNav.h; path = ProClient/XirenCoustNav.h; sourceTree = "<group>"; };
+		4A0A4A6C1C14386C000D88CB /* XirenCoustNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XirenCoustNav.m; path = ProClient/XirenCoustNav.m; sourceTree = "<group>"; };
+		4A31EFDD1C33CAA4003A147A /* ShuoMingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShuoMingViewController.h; sourceTree = "<group>"; };
+		4A31EFDE1C33CAA4003A147A /* ShuoMingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShuoMingViewController.m; sourceTree = "<group>"; };
+		4A31EFDF1C33CAA4003A147A /* ShuoMingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShuoMingViewController.xib; sourceTree = "<group>"; };
+		4AE3D3FB1C16E31A00C67574 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		757886AC7FB0AA1CEAD0579A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A27DD4D7E0D9C78157C2936B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D054ACD5CF6DA35686EFCBAF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +129,9 @@
 			children = (
 				3639047F1BE1BBED006C442A /* indexdata.h */,
 				363904801BE1BBED006C442A /* indexdata.m */,
+				36F5BD3C1BE2FECB00C373FE /* ProgramPacketViewController.h */,
+				36F5BD3D1BE2FECB00C373FE /* ProgramPacketViewController.m */,
+				36F5BD3E1BE2FECB00C373FE /* ProgramPacketViewController.xib */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -130,6 +148,8 @@
 		3646C28D1BDDD3BD0016435E /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				4A0A4A6B1C14386C000D88CB /* XirenCoustNav.h */,
+				4A0A4A6C1C14386C000D88CB /* XirenCoustNav.m */,
 				3646C28A1BDDD1B60016435E /* UIView+Extension.h */,
 				3646C28B1BDDD1B60016435E /* UIView+Extension.m */,
 				3646C28E1BDDD3D00016435E /* UIColor+Extension.h */,
@@ -150,6 +170,7 @@
 				3677C17D1BB6934900D66738 /* LearnViewController.h */,
 				3677C17E1BB6934900D66738 /* LearnViewController.m */,
 				3677C17F1BB6934900D66738 /* LearnViewController.xib */,
+				3639047E1BE1BBD0006C442A /* data */,
 				36852CDD1BB5369E00EC389E /* Index */,
 				36852CDE1BB5532C00EC389E /* Config */,
 				36EA6D991BB650E3009E755F /* UserCenter */,
@@ -160,7 +181,6 @@
 		36852CDD1BB5369E00EC389E /* Index */ = {
 			isa = PBXGroup;
 			children = (
-				3639047E1BE1BBD0006C442A /* data */,
 				36852CDF1BB5537700EC389E /* Index_ViewController.h */,
 				36852CE01BB5537700EC389E /* Index_ViewController.m */,
 				36852CE11BB5537700EC389E /* Index_ViewController.xib */,
@@ -177,6 +197,9 @@
 				36852CD31BB534C600EC389E /* ConfigViewController.h */,
 				36852CD41BB534C600EC389E /* ConfigViewController.m */,
 				36852CD51BB534C600EC389E /* ConfigViewController.xib */,
+				4A31EFDD1C33CAA4003A147A /* ShuoMingViewController.h */,
+				4A31EFDE1C33CAA4003A147A /* ShuoMingViewController.m */,
+				4A31EFDF1C33CAA4003A147A /* ShuoMingViewController.xib */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -184,6 +207,7 @@
 		36B424271BB3FF7600F054A9 = {
 			isa = PBXGroup;
 			children = (
+				4AE3D3FB1C16E31A00C67574 /* Launch Screen.storyboard */,
 				36E9DB011BB4EB3E003D664F /* PrefixHeader.pch */,
 				3646C28D1BDDD3BD0016435E /* categories */,
 				3646C2891BDDC8A00016435E /* netget */,
@@ -298,6 +322,7 @@
 				TargetAttributes = {
 					36B4242F1BB3FF7600F054A9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = TEPB3LJJA6;
 					};
 				};
 			};
@@ -326,13 +351,16 @@
 			files = (
 				36852CD71BB534C600EC389E /* ConfigViewController.xib in Resources */,
 				36852CCE1BB52C9500EC389E /* weather.jpg in Resources */,
+				4A31EFE11C33CAA4003A147A /* ShuoMingViewController.xib in Resources */,
 				36B424401BB3FF7600F054A9 /* Assets.xcassets in Resources */,
 				36EA6D981BB6461A009E755F /* WebViewController.xib in Resources */,
+				4AE3D3FC1C16E31A00C67574 /* Launch Screen.storyboard in Resources */,
 				36852CCC1BB524F500EC389E /* TabBarViewController.xib in Resources */,
 				36852CE81BB5541F00EC389E /* UserCenterViewController.xib in Resources */,
 				3677C1811BB6934900D66738 /* LearnViewController.xib in Resources */,
 				3677C17C1BB68A1800D66738 /* User_Content.xib in Resources */,
 				36852CDC1BB5369900EC389E /* Index_Content.xib in Resources */,
+				36F5BD401BE2FECB00C373FE /* ProgramPacketViewController.xib in Resources */,
 				36852CC71BB5216900EC389E /* MainViewController.xib in Resources */,
 				36852CE31BB5537700EC389E /* Index_ViewController.xib in Resources */,
 			);
@@ -379,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36852CE21BB5537700EC389E /* Index_ViewController.m in Sources */,
+				4A0A4A6D1C14386C000D88CB /* XirenCoustNav.m in Sources */,
 				3677C17B1BB68A1800D66738 /* User_Content.m in Sources */,
 				3646C2961BDDD3D00016435E /* UIImage+Extension.m in Sources */,
 				36EA6D971BB6461A009E755F /* WebViewController.m in Sources */,
@@ -391,8 +420,10 @@
 				36B424381BB3FF7600F054A9 /* AppDelegate.m in Sources */,
 				3646C2951BDDD3D00016435E /* UIFont+Extension.m in Sources */,
 				363904811BE1BBED006C442A /* indexdata.m in Sources */,
+				4A31EFE01C33CAA4003A147A /* ShuoMingViewController.m in Sources */,
 				36852CCB1BB524F500EC389E /* TabBarViewController.m in Sources */,
 				3646C28C1BDDD1B60016435E /* UIView+Extension.m in Sources */,
+				36F5BD3F1BE2FECB00C373FE /* ProgramPacketViewController.m in Sources */,
 				36852CE71BB5541F00EC389E /* UserCenterViewController.m in Sources */,
 				3646C2991BDDD4420016435E /* constants.m in Sources */,
 				3646C2881BDDC89C0016435E /* NetGetController.m in Sources */,
@@ -488,8 +519,12 @@
 			baseConfigurationReference = D054ACD5CF6DA35686EFCBAF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				COPY_HEADERS_UNIFDEF_FLAGS = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = ProClient/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
@@ -497,6 +532,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BoF.ProClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -505,8 +541,12 @@
 			baseConfigurationReference = 757886AC7FB0AA1CEAD0579A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				COPY_HEADERS_UNIFDEF_FLAGS = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = ProClient/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
@@ -514,6 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BoF.ProClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

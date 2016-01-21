@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface indexdata : NSObject
 
 /**
@@ -21,7 +22,11 @@
 
 @property (strong,nonatomic) NSArray *programArray;
 @property (strong,nonatomic) NSString *pid;
-@property (strong,nonatomic) NSString *programId;
 
-#define Url_Path @"/eph/e/initkbproGrid" 
+@property (strong,nonatomic) NSString *Url_path;
+@property (strong,nonatomic) NSDictionary *AfPara;
+
+
+-(void)readNSUserDefaults;
+-(void)LoginOut;
 @end

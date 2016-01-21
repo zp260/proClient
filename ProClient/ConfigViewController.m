@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    XirenCoustNav *CoustNav = [[XirenCoustNav alloc]init];
+    [CoustNav initXirenNav:self TitleView:nil WithTitle:@"设置"];
+    
     // Do any additional setup after loading the view from its nib.
     [self makeConfigMenu];
     [self._TableView reloadData];
@@ -27,7 +30,7 @@
 }
 -(void)makeConfigMenu
 {
-    self._MenuArray  = [[NSArray alloc]initWithObjects:@"关于我们",@"系统退出", nil];
+    self._MenuArray  = [[NSArray alloc]initWithObjects:@"关于我们",@"操作说明", nil];
     self._MenuArrayImage = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"AboutUs"],[UIImage imageNamed:@"LoginOut"], nil];
 }
 - (IBAction)_btclick:(id)sender {
@@ -74,14 +77,19 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    indexdata *UserCtrol = [[indexdata alloc]init];
     self._WebView = [[WebViewController alloc]init];
+    ShuoMingViewController *shuoMing = [[ShuoMingViewController alloc]init];
     NSInteger row = indexPath.row;
     switch (row) {
         case 0:
-            [self.navigationController pushViewController:self._WebView animated:YES];
+            [UserCtrol LoginOut];
+            NSLog(@"%@",self.navigationController);
+            [super.navigationController popToRootViewControllerAnimated:YES];
             break;
         case 1:
-            [self.navigationController pushViewController:self._WebView animated:YES];
+            [self.navigationController pushViewController:shuoMing animated:YES];
+            
 
             break;
         default:

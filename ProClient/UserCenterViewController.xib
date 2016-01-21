@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserCenterViewController">
             <connections>
+                <outlet property="_SearchBar" destination="75d-x0-khV" id="wRX-6m-7XA"/>
                 <outlet property="_TableView" destination="gP5-6M-7wo" id="ZJo-I4-VHi"/>
+                <outlet property="_loadMoreCell" destination="AJ4-j5-dJf" id="vrd-zl-PRD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,9 +26,12 @@
                         <outlet property="delegate" destination="-1" id="Csp-7A-9l8"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="75d-x0-khV">
+                <searchBar contentMode="redraw" placeholder="请输入搜索内容" translatesAutoresizingMaskIntoConstraints="NO" id="75d-x0-khV">
                     <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="jII-Nq-ftb"/>
+                    </connections>
                 </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -40,5 +45,30 @@
                 <constraint firstItem="gP5-6M-7wo" firstAttribute="top" secondItem="75d-x0-khV" secondAttribute="bottom" id="iu1-58-yXU"/>
             </constraints>
         </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AJ4-j5-dJf">
+            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJ4-j5-dJf" id="iPz-Bs-IXe">
+                <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSs-9x-YvB">
+                        <rect key="frame" x="0.0" y="7" width="567" height="30"/>
+                        <state key="normal" title="加载更多信息">
+                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="loadMoreData:" destination="-1" eventType="touchUpInside" id="2Ue-BI-afm"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="rSs-9x-YvB" secondAttribute="trailing" id="2FO-WG-N5k"/>
+                    <constraint firstItem="rSs-9x-YvB" firstAttribute="centerY" secondItem="iPz-Bs-IXe" secondAttribute="centerY" id="2OC-NW-9Iu"/>
+                    <constraint firstItem="rSs-9x-YvB" firstAttribute="leading" secondItem="iPz-Bs-IXe" secondAttribute="leading" id="Jif-2m-arY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="285.5" y="634"/>
+        </tableViewCell>
     </objects>
 </document>

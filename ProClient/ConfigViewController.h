@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Index_Content.h"
 #import "WebViewController.h"
+#import "indexdata.h"
+#import "XirenCoustNav.h"
+#import "ShuoMingViewController.h"
 
 @interface ConfigViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *_bt;

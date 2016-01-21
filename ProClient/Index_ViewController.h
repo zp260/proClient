@@ -10,8 +10,20 @@
 #import "WebViewController.h"
 #import "Index_Content.h"
 #import "LearnViewController.h"
+#import "ProgramPacketViewController.h"
+#import "indexdata.h"
+#import "XirenCoustNav.h"
 
 @interface Index_ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+{
+    int _page;
+    NSNumber *_currentPage;
+    NSNumber *_totalPage;
+    NetGetController *get;
+    indexdata *data;
+    NSMutableArray *more;
+    IBOutlet UITableViewCell *_loadMoreCell;
+}
 
 
 
@@ -23,7 +35,8 @@
 @property (strong,nonatomic) NSArray *_MenuArrayImage;
 @property (strong,nonatomic) WebViewController *_WebView;
 @property (strong,nonatomic) Index_Content *_ProjectContentView;
-@property (strong,nonatomic) NSArray *_programArrays;
+@property (strong,nonatomic) NSMutableArray *_programArrays;
 
-#define url @"http://110.181.232.82:18080/eph/e/initkbproGrid?eid=50&cst=4NxCj0pigYk="
+
+#define Url_ProgramBaseInfoPath @"/eph/e/initkbproGrid"
 @end
