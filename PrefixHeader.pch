@@ -36,4 +36,4 @@
 #define kDeviceWidth  [UIScreen mainScreen].bounds.size.width
 #define KNavgationBarHeight 64
 #define KTabarHeight 49
-#define Url_Ol @"http://110.181.194.119:18080"
+#define  Url_RootAdress @"http://app.dthuali.com:8089"
