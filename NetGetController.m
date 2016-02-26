@@ -23,7 +23,7 @@
 
 -(void)initCtrol
 {
-    ContentArray = [[NSArray alloc]init];
+    ContentArray = [[NSDictionary alloc]init];
     Controller = [[UIViewController alloc]init];
 }
 -(void) GetUrl:(NSString *)ApiUrlString target:(id)target selector:(SEL)selector parameters:(NSDictionary *)parameters

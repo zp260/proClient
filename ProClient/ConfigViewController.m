@@ -30,7 +30,7 @@
 }
 -(void)makeConfigMenu
 {
-    self._MenuArray  = [[NSArray alloc]initWithObjects:@"关于我们",@"操作说明", nil];
+    self._MenuArray  = [[NSArray alloc]initWithObjects:@"注销",@"操作说明", nil];
     self._MenuArrayImage = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"AboutUs"],[UIImage imageNamed:@"LoginOut"], nil];
 }
 - (IBAction)_btclick:(id)sender {

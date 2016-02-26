@@ -57,6 +57,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark-签到
 - (IBAction)SignBtClick:(id)sender
 {
     NSDictionary *para = [[NSDictionary alloc]initWithObjectsAndKeys:data.DefaultEid,@"eid",data.DefaultCst,@"cst",_sid,@"sid",@"1",@"hfqrzt", nil];
@@ -92,7 +93,7 @@
     
 }
 
-
+#pragma mark- 回复
 - (IBAction)RepeatBtClick:(id)sender
 {
     NSDictionary *para = [[NSDictionary alloc]initWithObjectsAndKeys:data.DefaultEid,@"eid",data.DefaultCst,@"cst",_sid,@"sid",@"1",@"hfqrzt", nil];

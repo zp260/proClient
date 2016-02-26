@@ -16,9 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initSegData];
-    // Do any additional setup after loading the view from its nib.
-   [self makeConfigMenu];
+    
+    //预读已登陆信息
     data = [[indexdata alloc]init];
     [data readNSUserDefaults];
     NSDictionary *para = [[NSDictionary alloc]initWithObjectsAndKeys:data.DefaultEid,@"eid",data.DefaultCst,@"cst",_sid,@"sid", nil];
@@ -31,6 +30,12 @@
         [get GetUrl:urlstr target:self selector:@selector(makeKeys_setp2:) parameters:para];
     }
 
+    [self initSegData];
+    
+    // Do any additional setup after loading the view from its nib.
+    [self makeConfigMenu];
+    [self getReadyassess];//提前预读已提交的评价信息
+    
 
 }
 /**
@@ -38,7 +43,9 @@
  */
 -(void)initSegData
 {
-    segSlectData = [[NSMutableArray alloc]initWithObjects:@"是",@"是",@"是",@"是",@"是",@"是",@"是", nil];
+
+        segSlectData = [[NSMutableArray alloc]initWithObjects:@"是",@"是",@"是",@"是",@"是",@"是",@"是", nil];
+    
 }
 
 /**
@@ -130,7 +137,15 @@
     
     seg = [[UISegmentedControl alloc]initWithItems:[[NSArray alloc]initWithObjects:@"是",@"否", nil]];
     seg.frame = CGRectMake(self._tableView.width - 80-5, (cell.height - 29)/2 , 80, 29);
-    seg.selectedSegmentIndex = 0;
+    if ([[segSlectData objectAtIndex:row] isEqualToString:@"是"])
+    {
+        seg.selectedSegmentIndex = 0;
+    }
+    else
+    {
+        seg.selectedSegmentIndex = 1;
+    }
+    
     [seg addTarget:self action:@selector(cellSegClick:) forControlEvents:UIControlEventValueChanged];
     seg.tag = row;
     [cell.contentView addSubview:seg];
@@ -231,7 +246,50 @@
     self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
+#pragma mark-假如已评价过 获取评价数据先
+-(void)getReadyassess
+{
+    NetGetController *NetGet = [[NetGetController alloc]init];
+    NSString *urlstr = [NSString stringWithFormat:@"%@%@",Url_RootAdress,Url_ReadyAssess];
+    NSDictionary *paras = [[NSDictionary alloc]initWithObjectsAndKeys:
+                          data.DefaultEid,@"eid",
+                          _sid,@"sid",//标包ID
+                          data.DefaultCst,@"cst",
+                          data.DefaultUser,@"sjhm",
+                          nil];
+    [NetGet GetUrl:urlstr target:self selector:@selector(ReadyAssessGetBack:) parameters:paras];
+}
+-(void)ReadyAssessGetBack:(NSDictionary *)datas
+{
+    if(datas.count>1)
+    {
+        if ([datas valueForKey:@"success"])
+        {
+            
+            NSArray *assess = [datas objectForKey:@"o"];
+            
+            _YjText.text =[assess valueForKey:@"yjhjy"];//意见和建议
+            NSMutableArray *segSlectData_assess = [[NSMutableArray alloc]initWithObjects:
+                                [assess valueForKey:@"isbszzgf"],//标书规范
+                                [assess valueForKey:@"isbszzyqxx"],//是否有倾向性
+                                [assess valueForKey:@"isdljgzzzg"],//是否正规
+                                [assess valueForKey:@"iszspsjl"],//评审纪律
+                                [assess valueForKey:@"issycrpsxcxw"],//有无随意出入评审现场行为
+                                [assess valueForKey:@"isashydpszj"],//有无暗示或诱导评审专家
+                                [assess valueForKey:@"isqclx"],//全程录像
+                                nil];
+            segSlectData = segSlectData_assess;
+                
+            [self._tableView reloadData];
 
+            
+        }
+        
+    }
+
+
+
+}
 /*
 #pragma mark - Navigation
 

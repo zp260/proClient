@@ -32,4 +32,5 @@
 
 #define Url_ProgramBaseInfoPath @"/eph/e/findsecinfo"
 #define Url_PingJia @"/eph/e/exppj"
+#define Url_ReadyAssess @"/eph/e/getexppj"
 @end
