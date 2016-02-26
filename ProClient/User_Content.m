@@ -268,20 +268,28 @@
             
             NSArray *assess = [datas objectForKey:@"o"];
             
-            _YjText.text =[assess valueForKey:@"yjhjy"];//意见和建议
-            NSMutableArray *segSlectData_assess = [[NSMutableArray alloc]initWithObjects:
-                                [assess valueForKey:@"isbszzgf"],//标书规范
-                                [assess valueForKey:@"isbszzyqxx"],//是否有倾向性
-                                [assess valueForKey:@"isdljgzzzg"],//是否正规
-                                [assess valueForKey:@"iszspsjl"],//评审纪律
-                                [assess valueForKey:@"issycrpsxcxw"],//有无随意出入评审现场行为
-                                [assess valueForKey:@"isashydpszj"],//有无暗示或诱导评审专家
-                                [assess valueForKey:@"isqclx"],//全程录像
-                                nil];
-            segSlectData = segSlectData_assess;
+            if([[assess valueForKey:@"isashydpszj"] isEqual:[NSNull null]])
+            {
+                NSLog(@"%@",[assess valueForKey:@"isashydpszj"] );
+            }
+            else
+            {
+                _YjText.text =[assess valueForKey:@"yjhjy"];//意见和建议
+                NSMutableArray *segSlectData_assess = [[NSMutableArray alloc]initWithObjects:
+                                                       [assess valueForKey:@"isbszzgf"],//标书规范
+                                                       [assess valueForKey:@"isbszzyqxx"],//是否有倾向性
+                                                       [assess valueForKey:@"isdljgzzzg"],//是否正规
+                                                       [assess valueForKey:@"iszspsjl"],//评审纪律
+                                                       [assess valueForKey:@"issycrpsxcxw"],//有无随意出入评审现场行为
+                                                       [assess valueForKey:@"isashydpszj"],//有无暗示或诱导评审专家
+                                                       [assess valueForKey:@"isqclx"],//全程录像
+                                                       nil];
+                segSlectData = segSlectData_assess;
                 
-            [self._tableView reloadData];
+                [self._tableView reloadData];
 
+            }
+            
             
         }
         
